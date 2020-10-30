@@ -1,0 +1,101 @@
+@import "./variables";
+
+@font-face {
+  font-family: LatoBold;
+  src: url("./resources/fonts/Lato-Bold.ttf");
+}
+
+@font-face {
+  font-family: LatoRegular;
+  src: url("./resources/fonts/Lato-Regular.ttf");
+}
+
+%font_small {
+  font-family: LatoRegular;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0.2px;
+}
+
+%font_regular {
+  font-family: LatoRegular;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.2px;
+}
+
+%font_tag {
+  font-family: LatoRegular;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 0px;
+}
+
+%font_medium {
+  font-family: LatoRegular;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0px;
+}
+
+%font_large {
+  font-family: LatoRegular;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0px;
+}
+
+%font_button {
+  font-family: LatoBold;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+}
+
+%font_subtitle {
+  font-family: LatoBold;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.4px;
+}
+
+%font_subtitle_medium {
+  font-family: LatoBold;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 1.5px;
+}
+
+%font_subtitle_small {
+  font-family: LatoBold;
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+@mixin svgBackground($svg, $width, $height) {
+  background-image: url($svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: transparent;
+  display: block;
+  width: $width;
+  height: $height;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  outline: none;
+  cursor: pointer;
+}
+
+input,
+select {
+  outline: none;
+}

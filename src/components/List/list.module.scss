@@ -1,0 +1,149 @@
+@import "../../_global.scss";
+
+.list {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.root {
+  padding: 0;
+  flex: 1;
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  margin-bottom: 3px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.list_title_container {
+  height: 51px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 13px 0 20px;
+  border-bottom: 1px solid $light_gray;
+}
+
+.list_title {
+  @extend %font_subtitle;
+  color: $black;
+}
+
+.list_total {
+  height: 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $lavander_gray;
+  padding: 0 20px;
+}
+
+.list_total_title {
+  @extend %font_subtitle_small;
+  color: $gray;
+}
+
+.list_total_value {
+  @extend %font_subtitle_medium;
+  color: $menu_blue;
+}
+
+%list_item {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  justify-content: space-between;
+  border-bottom: 1px solid $light_gray;
+}
+
+.list_item_small {
+  @extend %list_item;
+  height: 45px;
+}
+
+.list_item_medium {
+  @extend %list_item;
+  height: 54px;
+}
+
+.list_item_large {
+  @extend %list_item;
+  height: 70px;
+}
+
+.item_content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.item_info {
+  text-align: start;
+}
+
+.list_item_name {
+  @extend %font_medium;
+  color: $black;
+}
+
+.list_item_description {
+  @extend %font_regular;
+  color: $menu_blue;
+}
+
+.logo_image_small {
+  width: 24px;
+  height: 24px;
+  border: 1px solid $light_gray;
+  margin-right: 8px;
+  border-radius: 50%;
+}
+
+.logo_image_large {
+  width: 36px;
+  height: 36px;
+  margin-right: 12px;
+  border-radius: 8px;
+}
+
+.info_icon {
+  @include svgBackground(
+    "data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='18px' height='18px' viewBox='0 0 18 18' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'%3E%3Cdesc%3ECreated with Lunacy%3C/desc%3E%3Cg id='Icons-/-18px-/-Info'%3E%3Cpath d='M0 0L18 0L18 18L0 18L0 0Z' id='Path' fill='none' stroke='none' /%3E%3Cpath d='M0 8C0 3.584 3.584 0 8 0C12.416 0 16 3.584 16 8C16 12.416 12.416 16 8 16C3.584 16 0 12.416 0 8ZM8 14.4C4.472 14.4 1.6 11.528 1.6 8C1.6 4.472 4.472 1.6 8 1.6C11.528 1.6 14.4 4.472 14.4 8C14.4 11.528 11.528 14.4 8 14.4ZM8.8 4L8.8 5.6L7.2 5.6L7.2 4L8.8 4ZM7.2 7.2L7.2 12L8.8 12L8.8 7.2L7.2 7.2Z' transform='translate(1 1)' id='Shape' fill='%23FFAB00' fill-rule='evenodd' stroke='none' /%3E%3C/g%3E%3C/svg%3E",
+    18px,
+    18px
+  );
+}
+
+.list_more {
+  height: 19px;
+  background-color: $extra_light_gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  right: 0;
+  border-top: 1px solid $light_gray;
+}
+
+.list_more_icon {
+  @include svgBackground(
+    "data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='25px' height='5px' viewBox='0 0 25 5' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'%3E%3Cdesc%3ECreated with Lunacy%3C/desc%3E%3Cpath d='M2.5 5C3.88071 5 5 3.88071 5 2.5C5 1.11929 3.88071 0 2.5 0C1.11929 0 0 1.11929 0 2.5C0 3.88071 1.11929 5 2.5 5Z' transform='translate(20 0)' id='Oval' fill='%23999999' stroke='none' /%3E%3Cpath d='M2.5 5C3.88071 5 5 3.88071 5 2.5C5 1.11929 3.88071 0 2.5 0C1.11929 0 0 1.11929 0 2.5C0 3.88071 1.11929 5 2.5 5Z' transform='translate(10 0)' id='Oval' fill='%23999999' stroke='none' /%3E%3Cpath d='M2.5 5C3.88071 5 5 3.88071 5 2.5C5 1.11929 3.88071 0 2.5 0C1.11929 0 0 1.11929 0 2.5C0 3.88071 1.11929 5 2.5 5Z' id='Oval' fill='%23999999' stroke='none' /%3E%3C/svg%3E",
+    25px,
+    5px
+  );
+}
+
+.actions_icon {
+  cursor: pointer;
+  @include svgBackground(
+    "data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='4px' height='18px' viewBox='0 0 4 18' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'%3E%3Cdesc%3ECreated with Lunacy%3C/desc%3E%3Cg id='options-icon'%3E%3Cpath d='M2 4C3.10457 4 4 3.10457 4 2C4 0.895431 3.10457 0 2 0C0.895431 0 0 0.895431 0 2C0 3.10457 0.895431 4 2 4Z' id='Oval' fill='%23787389' stroke='none' /%3E%3Cpath d='M2 4C3.10457 4 4 3.10457 4 2C4 0.895431 3.10457 0 2 0C0.895431 0 0 0.895431 0 2C0 3.10457 0.895431 4 2 4Z' transform='translate(0 7)' id='Oval' fill='%23787389' stroke='none' /%3E%3Cpath d='M2 4C3.10457 4 4 3.10457 4 2C4 0.895431 3.10457 0 2 0C0.895431 0 0 0.895431 0 2C0 3.10457 0.895431 4 2 4Z' transform='translate(0 14)' id='Oval' fill='%23787389' stroke='none' /%3E%3C/g%3E%3C/svg%3E",
+    18px,
+    18px
+  );
+}

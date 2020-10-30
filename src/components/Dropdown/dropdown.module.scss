@@ -1,0 +1,82 @@
+@import "../../_global.scss";
+
+.dropdown_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  @extend %font_regular;
+  color: $black2;
+  display: block;
+  margin-bottom: 6px;
+  text-align: start;
+}
+
+.root {
+  height: 36px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.dropdown.focused {
+    border-color: $menu_blue;
+        color: $menu_blue;
+}
+
+.dropdown {
+  height: 100%;
+  @extend %font_medium;
+  position: relative;
+  overflow: hidden;
+  background-color: white;
+  border: solid 1px $grayCACACA;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: $gray;
+  cursor: default;
+  outline: none;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+}
+
+.options {
+  background-color: white;
+  border: solid 1px $grayCACACA;
+  box-sizing: border-box;
+  max-height: 200px;
+  overflow-y: auto;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 1000;
+  border-radius: 6px;
+
+  @extend %font_medium;
+  color: $gray;
+  text-align: start;
+
+  & > div {
+      padding: 8px 12px;
+      border-bottom: 1px solid $grayCACACA;
+  }
+
+  & > div:last-child {
+    border-bottom: none;
+    }
+}
+
+.select_arrow {
+  right: 12px;
+  top: 14px;
+  position: absolute;
+  @include svgBackground(
+    "data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='14px' height='8px' viewBox='0 0 14 8' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'%3E%3Cdesc%3ECreated with Lunacy%3C/desc%3E%3Cg id='Arrows-/-Select-/-Down-/-Grey'%3E%3Cpath d='M13.7164 0.38673C14.0996 0.768219 14.0921 1.3942 13.7082 1.77637C13.3243 2.15855 7.78094 7.67649 7.78094 7.67649C7.34942 8.10604 6.65339 8.10963 6.21826 7.67649C6.21826 7.67649 0.67878 2.16236 0.291016 1.77637C-0.0967474 1.39038 -0.0945233 0.762357 0.282831 0.38673C0.660184 0.0111035 0.00446816 0.663819 0.387711 0.28233C0.770954 -0.099159 1.39981 -0.0916973 1.78374 0.290478C2.16767 0.672653 6.9996 5.48247 6.9996 5.48247C6.9996 5.48247 11.8277 0.676467 12.2155 0.290478C12.6032 -0.0955109 13.2341 -0.0932969 13.6115 0.28233C13.9888 0.657957 13.3331 0.00524144 13.7164 0.38673Z' id='Icon' fill='%23CCCCCC' stroke='none' /%3E%3C/g%3E%3C/svg%3E",
+    14px,
+    8px
+  );
+}
+
+.placeholder {
+}

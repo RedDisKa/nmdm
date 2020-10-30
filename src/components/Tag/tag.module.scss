@@ -1,0 +1,53 @@
+@import "../../_global.scss";
+
+@mixin deleteIcon($color) {
+  margin-left: 10px;
+  cursor: pointer;
+  @include svgBackground(
+    "data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='8px' height='8px' viewBox='0 0 8 8' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'%3E%3Cdesc%3ECreated with Lunacy%3C/desc%3E%3Cpath d='M7.19429 0L4 3.19486L0.805714 0L0 0.805714L3.19429 4L0 7.19429L0.805714 8L4 4.80571L7.19429 8L8 7.19429L4.80571 4L8 0.805714L7.19429 0Z' id='Small-Close' fill='%23" + $color + "' stroke='none' /%3E%3C/svg%3E",
+    8px,
+    8px
+  );
+}
+
+.tag {
+  @extend %font_tag;
+  padding: 4px 10px 5px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.blue {
+  color: $menu_blue;
+  border: 1px solid $menu_blue;
+  background-color: $menu_blue10;
+
+  &.painted_over {
+    background-color: $menu_blue;
+    color: white;
+  }
+
+  & > .delete_icon {
+    @include deleteIcon("0891CD");
+  }
+}
+
+.purple {
+  color: $purple;
+  border: 1px solid $purple;
+  background-color: $purple10;
+
+  &.painted_over {
+    background-color: $purple;
+    color: white;
+  }
+
+  & > .delete_icon {
+    @include deleteIcon("AB7DF6");
+  }
+}
+
+.not_filled {
+  background-color: white;
+}

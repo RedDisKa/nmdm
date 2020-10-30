@@ -1,0 +1,22 @@
+
+@import '../../_global.scss';
+
+.Collapsible__trigger {
+    height: 36px;
+    @extend %font_subtitle_small;
+    color: $gray;
+    padding: 0 20px 0 19px;
+    display: flex;
+    justify-content: space-between;
+    background-color: $lavander_gray;
+    align-items: center;
+    cursor: pointer;
+
+    &.is-open > span {
+        transform: rotate(0.5turn);
+    }
+}
+
+.Collapsible {
+    margin-bottom: 2px;
+}

@@ -1,0 +1,32 @@
+@import '../../_global.scss';
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-left: 12px;
+}
+
+.checkbox_icon_checked {
+    @include svgBackground(
+        "data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='18px' height='18px' viewBox='0 0 18 18' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'%3E%3Cdesc%3ECreated with Lunacy%3C/desc%3E%3Cdefs%3E%3Cfilter filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB' id='filter_1'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix' /%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape' /%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha' /%3E%3CfeOffset dx='-1' dy='1' /%3E%3CfeGaussianBlur stdDeviation='0' /%3E%3CfeComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1' /%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0' /%3E%3CfeBlend mode='normal' in2='shape' result='effect0_innerShadow' /%3E%3C/filter%3E%3Cpath d='M3.999 0L14.001 0C16.2096 0 18 1.79041 18 3.999L18 14.001C18 16.2096 16.2096 18 14.001 18L3.999 18C1.79041 18 0 16.2096 0 14.001L0 3.999C0 1.79041 1.79041 0 3.999 0Z' id='path_1' /%3E%3CclipPath id='clip_1'%3E%3Cuse xlink:href='%23path_1' /%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='Icon'%3E%3Cg filter='url(%23filter_1)'%3E%3Cg id='Background'%3E%3Cuse stroke='none' fill='%230093EE' xlink:href='%23path_1' /%3E%3Cg clip-path='url(%23clip_1)'%3E%3Cuse xlink:href='%23path_1' fill='none' stroke='%23000000' stroke-opacity='0.0509803928' stroke-width='2' /%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cpath d='M9.81539 0L4.05878 5.6758L1.17986 2.83319L0 3.99196L4.05957 8L11 1.15802L9.81539 0Z' transform='translate(4 5)' id='Icon' fill='%23FFFFFF' stroke='none' /%3E%3C/g%3E%3C/svg%3E",
+        18px,
+        18px
+    )
+}
+
+.checkbox_icon {
+    @include svgBackground(
+        "data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='18px' height='18px' viewBox='0 0 18 18' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'%3E%3Cdesc%3ECreated with Lunacy%3C/desc%3E%3Cdefs%3E%3Cpath d='M3.999 0L14.001 0C16.2096 0 18 1.79041 18 3.999L18 14.001C18 16.2096 16.2096 18 14.001 18L3.999 18C1.79041 18 0 16.2096 0 14.001L0 3.999C0 1.79041 1.79041 0 3.999 0Z' id='path_1' /%3E%3CclipPath id='clip_1'%3E%3Cuse xlink:href='%23path_1' /%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='Icon'%3E%3Cg id='Background'%3E%3Cuse stroke='none' fill='%23FFFFFF' xlink:href='%23path_1' /%3E%3Cg clip-path='url(%23clip_1)'%3E%3Cuse xlink:href='%23path_1' fill='none' stroke='%23CACACA' stroke-width='2' /%3E%3C/g%3E%3C/g%3E%3Cpath d='M9.81539 0L4.05878 5.6758L1.17986 2.83319L0 3.99196L4.05957 8L11 1.15802L9.81539 0Z' transform='translate(4 5)' id='Icon' fill='%23FFFFFF' stroke='none' /%3E%3C/g%3E%3C/svg%3E",
+        18px,
+        18px
+    )
+}
+
+.label {
+    @extend %font_regular;
+    color: $black2;
+    display: block;
+    margin-left: 12px;
+    text-align: start;
+}

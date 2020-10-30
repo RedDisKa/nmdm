@@ -1,0 +1,266 @@
+@import "../../_global.scss";
+
+.container {
+  display: flex;
+  margin: 20px 0;
+  justify-content: center;
+  flex: 1;
+
+  & > div + div {
+    margin-left: 20px;
+  }
+
+  & > div:nth-child(1) {
+    flex: 0.24;
+    max-width: 320px;
+    height: calc(100vh - 180px);
+    display: flex;
+    flex-direction: column;
+
+    & > div:first-child {
+      flex: 1;
+    }
+
+    & > div:last-child {
+      height: 416px;
+      margin-top: 18px;
+      margin-bottom: -3px;
+    }
+  }
+
+  & > div:nth-child(2) {
+    flex: 0.53;
+    max-width: 710px;
+    height: calc(100vh - 180px);
+
+    & > div {
+      height: calc(100vh - 180px);
+      overflow: auto;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  & > div:nth-child(3) {
+    flex: 0.23;
+    max-width: 310px;
+    height: calc(100vh - 180px);
+
+    & > div {
+      height: calc(100vh - 180px);
+    }
+  }
+}
+
+.main_container {
+  padding: 50px 30px;
+}
+
+.person {
+  background-color: #f1f1f1;
+}
+
+.address_container,
+.details_container {
+  display: flex;
+  justify-content: stretch;
+  padding: 50px 30px 30px;
+
+  & > div {
+    flex: 1;
+  }
+
+  & > div:last-child {
+    margin-left: 60px;
+  }
+
+  & > div:first-child {
+    margin-right: 20px;
+  }
+}
+
+.details_container > div:last-child {
+  margin-top: 33px;
+}
+
+.right_container {
+  & > div + div {
+    margin-top: 20px;
+  }
+}
+
+.phone_fax_container {
+  display: flex;
+
+  & > div:last-child {
+    margin-left: 8px;
+  }
+
+  & > div {
+    flex: 1;
+  }
+}
+
+.buttons_container {
+  display: flex;
+  margin: 50px auto;
+  justify-content: center;
+
+  & > button + button {
+    margin-left: 40px;
+  }
+}
+
+.upload_photo_container {
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.upload_photo_outer_container {
+  max-width: 150px;
+  flex: 1;
+  cursor: pointer;
+}
+
+.upload_photo {
+  padding-top: 100%;
+  position: relative;
+  border: 1.5px solid $light_gray;
+  border-radius: 15px;
+  background-color: #fbfbfb;
+}
+
+.upload_photo_content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upload_photo_icon {
+  @include svgBackground(
+    "data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'%3E%3Cdesc%3ECreated with Lunacy%3C/desc%3E%3Cg id='Buttons-/-Plus-%231'%3E%3Cpath d='M12 0C5.376 0 0 5.376 0 12C0 18.624 5.376 24 12 24C18.624 24 24 18.624 24 12C24 5.376 18.624 0 12 0ZM2 12C2 17.5125 6.4875 22 12 22C17.5125 22 22 17.5125 22 12C22 6.4875 17.5125 2 12 2C6.4875 2 2 6.4875 2 12ZM13 6L13 11L18 11L18 13L13 13L13 18L11 18L11 13L6 13L6 11L11 11L11 6L13 6Z' id='Button' fill='%230093EE' fill-rule='evenodd' stroke='none' /%3E%3C/g%3E%3C/svg%3E",
+    24px,
+    24px
+  );
+}
+
+.upload_photo_text {
+  max-width: 150px;
+  margin-left: 20px;
+  margin-top: 10px;
+  @extend %font_medium;
+  font-size: 12px;
+  color: $gray;
+  text-align: start;
+}
+
+.upload_title {
+  color: $gray;
+  @extend %font_small;
+  width: 65px;
+  margin-top: 8px;
+}
+
+.arrow_icon {
+  @include svgBackground(
+      "data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='15px' height='9px' viewBox='0 0 15 9' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'%3E%3Cdesc%3ECreated with Lunacy%3C/desc%3E%3Cg id='Icon'%3E%3Cpath d='M14.2932 2.2149C12.7088 3.79744 9.01071 7.49108 9.01071 7.49108C9.01071 7.49108 7.5 9 7.5 9C7.5 9 5.98929 7.49108 5.98929 7.49108L0.70682 2.2149C0.316454 1.825 0.316454 1.19284 0.70682 0.802939L0.803895 0.705979C1.19426 0.316078 1.82717 0.316078 2.21753 0.705979C3.80196 2.28852 7.5 5.98216 7.5 5.98216L12.7825 0.705979C13.1728 0.316078 13.8057 0.316078 14.1961 0.70598L14.2932 0.802939C14.6835 1.19284 14.6835 1.825 14.2932 2.2149Z' id='Icon' fill='%23CCCCCC' stroke='none' /%3E%3C/g%3E%3C/svg%3E",
+      15px,
+      9px
+  )
+}
+
+
+.main_header {
+  display: flex;
+  padding: 30px 30px 24px;
+}
+
+.main_image_container {
+  position: relative;
+
+  & > img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+  }
+
+  & > span {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    @include svgBackground(
+      "data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='13px' height='13px' viewBox='0 0 13 13' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'%3E%3Cdesc%3ECreated with Lunacy%3C/desc%3E%3Cdefs%3E%3Cpath d='M6.5 13C10.0899 13 13 10.0899 13 6.5C13 2.91015 10.0899 0 6.5 0C2.91015 0 0 2.91015 0 6.5C0 10.0899 2.91015 13 6.5 13Z' id='path_1' /%3E%3CclipPath id='clip_1'%3E%3Cuse xlink:href='%23path_1' /%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='Notifications-/-Green-%232'%3E%3Cg id='Notification-%232'%3E%3Cuse xlink:href='%23path_1' fill='none' stroke='%23FFFFFF' stroke-width='6' /%3E%3Cuse stroke='none' fill='%234ECE3D' xlink:href='%23path_1' /%3E%3Cg clip-path='url(%23clip_1)'%3E%3Cuse xlink:href='%23path_1' fill='none' stroke='%23000000' stroke-opacity='0.0509803928' stroke-width='6' /%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E",
+      13px,
+      13px
+    );
+    border-radius: 50%;
+    border: 2px solid white;
+  }
+}
+
+.main_title_container {
+  margin-left: 20px;
+}
+
+.main_title {
+  font-size: 24px;
+  line-height: 29px;
+  letter-spacing: 0.4px;
+  font-family: LatoRegular;
+  text-align: start;
+  color: $black;
+  margin-bottom: 10px;
+}
+
+.main_description {
+  text-align: start;
+  @extend %font_tag;
+  color: $gray;
+  margin-bottom: 16px;
+  padding: 0 30px;
+}
+
+.main_part {
+  text-align: start;
+  margin-bottom: 16px;
+  padding: 0 30px;
+}
+
+.main_info_title {
+  @extend %font_tag;
+  line-height: 20px;
+  color: $gray;
+}
+
+.main_info_value {
+  @extend %font_subtitle_medium;
+  line-height: 20px;
+  color: $black2;
+  letter-spacing: 0;
+}
+
+.bookmark_button_icon {
+  @include svgBackground(
+    "data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'%3E%3Cdesc%3ECreated with Lunacy%3C/desc%3E%3Cg id='icon-24px-bookmark'%3E%3Cpath d='M0 2L0 20L6 14L12 20L12 2C12 0.348066 11.6555 0 10 0L2 0C0.344719 0 0 0.35068 0 2Z' transform='translate(6 2)' id='bookmark' fill='%23FFFFFF' stroke='none' /%3E%3Cpath d='M0 0L24 0L24 24L0 24L0 0Z' id='Path' fill='none' stroke='none' /%3E%3C/g%3E%3C/svg%3E",
+    24px,
+    24px
+  )
+}
+
+.main_button {
+  margin-left: 30px;
+  margin-bottom: 40px;
+}
+
+.filter {
+  padding: 20px;
+}

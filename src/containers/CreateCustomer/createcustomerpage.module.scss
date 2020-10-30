@@ -1,0 +1,134 @@
+@import '../../_global.scss';
+
+.container {
+    display: flex;
+    margin: 20px 0;
+    justify-content: center;
+
+    & > div + div {
+        margin-left: 20px;
+    }
+
+    & > div:first-child {
+        flex: .25;
+        max-width: 350px;
+    }
+
+    & > div:last-child {
+        flex: .75;
+        max-width: 1010px;
+    }
+}
+
+.main_container {
+    padding: 50px 30px;
+}
+
+.person {
+    background-color: #F1F1F1;
+}
+
+.address_container, .details_container {
+    display: flex;
+    justify-content: stretch;
+    padding: 50px 30px 30px;
+
+    & > div {
+        flex: 1;
+    }
+
+    & > div:last-child {
+        margin-left: 60px;
+    }
+
+    & > div:first-child {
+        margin-right: 20px;
+    }
+}
+
+.details_container > div:last-child {
+    margin-top: 33px;
+}
+
+.right_container {
+    & > div + div {
+        margin-top: 20px;
+    }
+}
+
+.phone_fax_container {
+    display: flex;
+
+    & > div:last-child {
+        margin-left: 8px;
+    }
+
+    & > div {
+        flex: 1;
+    }
+}
+
+.buttons_container {
+    display: flex;
+    margin: 50px auto;
+    justify-content: center;
+
+    & > button + button {
+        margin-left: 40px;
+    }
+}
+
+.upload_photo_container {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.upload_photo_outer_container {
+    max-width: 150px;
+    flex: 1;
+    cursor: pointer;
+}
+
+.upload_photo {
+    padding-top: 100%;
+    position: relative;
+    border: 1.5px solid $light_gray;
+    border-radius: 15px;
+    background-color: #FBFBFB;
+}
+
+.upload_photo_content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload_photo_icon {
+    @include svgBackground(
+        "data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'%3E%3Cdesc%3ECreated with Lunacy%3C/desc%3E%3Cg id='Buttons-/-Plus-%231'%3E%3Cpath d='M12 0C5.376 0 0 5.376 0 12C0 18.624 5.376 24 12 24C18.624 24 24 18.624 24 12C24 5.376 18.624 0 12 0ZM2 12C2 17.5125 6.4875 22 12 22C17.5125 22 22 17.5125 22 12C22 6.4875 17.5125 2 12 2C6.4875 2 2 6.4875 2 12ZM13 6L13 11L18 11L18 13L13 13L13 18L11 18L11 13L6 13L6 11L11 11L11 6L13 6Z' id='Button' fill='%230093EE' fill-rule='evenodd' stroke='none' /%3E%3C/g%3E%3C/svg%3E",
+        24px,
+        24px
+    )
+}
+
+.upload_photo_text {
+    max-width: 150px;
+    margin-left: 20px;
+    margin-top: 10px;
+    @extend %font_medium;
+    font-size: 12px;
+    color: $gray;
+    text-align: start;
+}
+
+.upload_title {
+    color: $gray;
+    @extend %font_small;
+    width: 65px;
+    margin-top: 8px;
+}

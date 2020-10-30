@@ -1,0 +1,29 @@
+@import '../../_global.scss';
+
+.textfield_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    @extend %font_regular;
+    color: $black2;
+    display: block;
+    margin-bottom: 6px;
+    text-align: start;
+}
+
+.textfield {
+    @extend %font_medium;
+    color: $gray;
+    height: 34px;
+    border: solid 1px $grayCACACA;
+    border-radius: 8px;
+    padding: 0 12px;
+    margin-bottom: 20px;
+
+    &:focus {
+        border-color: $menu_blue;
+        color: $menu_blue;
+    }
+}

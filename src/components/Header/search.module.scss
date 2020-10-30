@@ -1,0 +1,32 @@
+@import '../../_global.scss';
+
+.search_container {
+    position: relative;
+}
+
+.search_input {
+    border: 1px solid $lavander_gray20;
+    outline: none;
+    height: 40px;
+    width: 600px;
+    padding-left: 44px;
+    border-radius: 6px;
+    @extend %font_medium;
+    color: $black;
+
+    &::placeholder {
+        color: $gray;
+      }
+}
+
+.search_icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    @include svgBackground(
+        "data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='19px' height='20px' viewBox='0 0 19 20' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'%3E%3Cdesc%3ECreated with Lunacy%3C/desc%3E%3Cpath d='M14.2992 14.2648L18.8037 18.7457L18.8037 18.77C19.0722 19.0582 19.0643 19.5073 18.7858 19.7858C18.5073 20.0643 18.0584 20.0722 17.7702 19.8037L13.178 15.2107C9.5156 17.7868 4.47455 17.022 1.74071 13.4756C-0.993127 9.92915 -0.450384 4.8586 2.9721 1.97136C6.39458 -0.915882 11.4833 -0.596065 14.5174 2.69697C17.5516 5.99 17.4555 11.0886 14.2992 14.2648ZM8.41508 1.58788C4.64574 1.58788 1.59009 4.64401 1.59009 8.41394C1.59009 12.1839 4.64574 15.24 8.41508 15.24C12.1844 15.24 15.2401 12.1839 15.2401 8.41394C15.2401 4.64401 12.1844 1.58788 8.41508 1.58788Z' id='Icon' fill='%237D7D7D' fill-rule='evenodd' stroke='none' /%3E%3C/svg%3E",
+        19px,
+        20px
+    )
+}
