@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/nmdm/static/css/main.9ab088fe.chunk.css",
+    "main.js": "/nmdm/static/js/main.7d0cd8ce.chunk.js",
+    "main.js.map": "/nmdm/static/js/main.7d0cd8ce.chunk.js.map",
+    "runtime-main.js": "/nmdm/static/js/runtime-main.2c7cca10.js",
+    "runtime-main.js.map": "/nmdm/static/js/runtime-main.2c7cca10.js.map",
+    "static/js/2.f6af0866.chunk.js": "/nmdm/static/js/2.f6af0866.chunk.js",
+    "static/js/2.f6af0866.chunk.js.map": "/nmdm/static/js/2.f6af0866.chunk.js.map",
+    "static/js/3.44d6caec.chunk.js": "/nmdm/static/js/3.44d6caec.chunk.js",
+    "static/js/3.44d6caec.chunk.js.map": "/nmdm/static/js/3.44d6caec.chunk.js.map",
+    "index.html": "/nmdm/index.html",
+    "static/css/main.9ab088fe.chunk.css.map": "/nmdm/static/css/main.9ab088fe.chunk.css.map",
+    "static/js/2.f6af0866.chunk.js.LICENSE.txt": "/nmdm/static/js/2.f6af0866.chunk.js.LICENSE.txt",
+    "static/media/calendar.scss": "/nmdm/static/media/Lato-Regular.9919edff.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2c7cca10.js",
+    "static/js/2.f6af0866.chunk.js",
+    "static/css/main.9ab088fe.chunk.css",
+    "static/js/main.7d0cd8ce.chunk.js"
+  ]
+}
