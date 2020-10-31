@@ -41,9 +41,7 @@
 }
 
 .item_image {
-  width: 48px;
-  height: 48px;
-  border-radius: 10.67px;
+  @extend %image_medium;
 }
 
 %item_source_type_icon {

@@ -5,13 +5,19 @@ export interface AppRouteType {
   }
 
 export interface Customer {
-  partyType: string,
+  logo: string,
+
+    partyType: string,
     organizationName: string,
     accountType: string,
     marketSizeCode: string,
     dunsId: string,
     partyStatus: string,
     partyName: string,
+
+    firstGivenName: string,
+  secondGivenName: string,
+  familyName: string,
 
     addressLine1: string,
     addressLine2: string,
@@ -40,7 +46,9 @@ export interface Customer {
     identifiedHeadquarterIndicator: boolean,
     globalUltimateParentIndicator: boolean,
     domesticUltimateParentIndicator: boolean,
-    parentIndicator: boolean
+    parentIndicator: boolean,
+
+    potencialMatches: {name: string, logo: string, type: string}[]
 }
 
 export interface Feed {
@@ -58,4 +66,17 @@ export interface ListItem {
   name: string,
   image: string,
   description?: string
+}
+
+export interface TreeNodeType {
+  key: string,
+  title: string,
+  children?: TreeNodeType[]
+}
+
+export interface HistoryItem {
+  userName: string,
+  action: 'viewed' | 'updated' | 'checked',
+  userAvatar: string,
+  actionTime: string
 }

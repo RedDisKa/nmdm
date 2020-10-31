@@ -1,0 +1,20 @@
+@import "../../_global.scss";
+
+.list_total {
+  height: 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $lavander_gray;
+  padding: 0 20px;
+}
+
+.list_total_title {
+  @extend %font_subtitle_small;
+  color: $gray;
+}
+
+.list_total_value {
+  @extend %font_subtitle_medium;
+  color: $menu_blue;
+}

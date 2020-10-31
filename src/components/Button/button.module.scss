@@ -8,7 +8,9 @@
   @extend %font_button;
   border-radius: 6px;
   display: flex;
+  justify-content: center;
   align-items: center;
+  min-height: 36px;
 }
 
 .small_padding {

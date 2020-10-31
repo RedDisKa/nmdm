@@ -74,6 +74,38 @@
   text-transform: uppercase;
 }
 
+%font_info {
+  font-family: LatoBold;
+  font-size: 13px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+}
+
+%image_medium {
+  width: 48px;
+  height: 48px;
+  border-radius: 10.67px;
+}
+
+%image_large {
+  width: 60px;
+  height: 60px;
+  border-radius: 13px;
+}
+
+%image_extra_large {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+}
+
+%image_round_medium {
+  width: 30px;
+  height: 30px;
+  border: 1.5px solid $light_gray;
+  border-radius: 50%;
+}
+
 @mixin svgBackground($svg, $width, $height) {
   background-image: url($svg);
   background-size: contain;
