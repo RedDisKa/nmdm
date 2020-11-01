@@ -1,0 +1,23 @@
+@import '../../_global.scss';
+
+.container {
+    display: flex;
+    margin: 20px;
+}
+
+.left_tree {
+    flex: 1;
+}
+
+.right_tree {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.buttons_container {
+    display: flex;
+    justify-content: center;
+    & > button + button {
+        margin-left: 40px;
+    }
+}
