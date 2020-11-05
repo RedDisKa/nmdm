@@ -222,7 +222,7 @@ export const CustomerFeedPage = () => {
             </div>
             <div>
                 <Panel classNames={s.stretched}>
-                    <ListTitle title='News Feed' actions={[]}/>
+                    <ListTitle title='News Feed' actions={[]} className={s.list_title}/>
                     {TEST_DATA.feeds.map((feed, index) => (<FeedItem key={index} feed={feed} setMarked={setMarked} />))}
                 </Panel>
             </div>

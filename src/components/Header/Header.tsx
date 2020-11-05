@@ -10,8 +10,8 @@ export const Header = () => {
 
     const history = useHistory();
 
-    const [newEvents, setNewEvents] = useState(false as boolean)
-    const [user, setUser] = useState({image: avatar})
+    const [newEvents, ] = useState(false as boolean)
+    const [user, ] = useState({image: avatar})
 
     const getMenuButton = (title: string, route: string, icon: string, activeIcon: string) => {
         const active = history.location.pathname.startsWith('/' + route.split('/')[1])
@@ -44,7 +44,7 @@ export const Header = () => {
             <Search />
             <div className={s.user_container}>
                 <span className={newEvents ? s.notifications_icon_new : s.notifications_icon}/>
-                <img className={s.avatar} src={user.image}/>
+                <img className={s.avatar} src={user.image} alt=''/>
             </div>
         </div>
         <div className={s.menu}>

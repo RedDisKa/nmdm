@@ -4,7 +4,6 @@
   display: flex;
   margin: 20px 0;
   justify-content: center;
-  flex: 1;
 
   & > div + div {
     margin-left: 20px;
@@ -13,12 +12,20 @@
   & > div:nth-child(1) {
     flex: 0.24;
     max-width: 320px;
-    height: calc(100vh - 180px);
     display: flex;
     flex-direction: column;
+    position: sticky;
+    top: 150px;
+    max-height: calc(100vh - 170px);
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     & > div:first-child {
-      flex: 1;
     }
 
     & > div:last-child {
@@ -31,13 +38,14 @@
   & > div:nth-child(2) {
     flex: 0.53;
     max-width: 710px;
-    height: calc(100vh - 180px);
+    position: sticky;
+    top: 170px;
 
     & > div {
-      height: calc(100vh - 180px);
       overflow: auto;
       -ms-overflow-style: none;
       scrollbar-width: none;
+      max-height: calc(100vh - 170px);
 
       &::-webkit-scrollbar {
         display: none;
@@ -48,10 +56,17 @@
   & > div:nth-child(3) {
     flex: 0.23;
     max-width: 310px;
-    height: calc(100vh - 180px);
+    max-height: calc(100vh - 170px);
 
     & > div {
-      height: calc(100vh - 180px);
+      height: 100%;
+      overflow-y: auto;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
   }
 }
@@ -172,12 +187,11 @@
 
 .arrow_icon {
   @include svgBackground(
-      "data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='15px' height='9px' viewBox='0 0 15 9' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'%3E%3Cdesc%3ECreated with Lunacy%3C/desc%3E%3Cg id='Icon'%3E%3Cpath d='M14.2932 2.2149C12.7088 3.79744 9.01071 7.49108 9.01071 7.49108C9.01071 7.49108 7.5 9 7.5 9C7.5 9 5.98929 7.49108 5.98929 7.49108L0.70682 2.2149C0.316454 1.825 0.316454 1.19284 0.70682 0.802939L0.803895 0.705979C1.19426 0.316078 1.82717 0.316078 2.21753 0.705979C3.80196 2.28852 7.5 5.98216 7.5 5.98216L12.7825 0.705979C13.1728 0.316078 13.8057 0.316078 14.1961 0.70598L14.2932 0.802939C14.6835 1.19284 14.6835 1.825 14.2932 2.2149Z' id='Icon' fill='%23CCCCCC' stroke='none' /%3E%3C/g%3E%3C/svg%3E",
-      15px,
-      9px
-  )
+    "data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='15px' height='9px' viewBox='0 0 15 9' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'%3E%3Cdesc%3ECreated with Lunacy%3C/desc%3E%3Cg id='Icon'%3E%3Cpath d='M14.2932 2.2149C12.7088 3.79744 9.01071 7.49108 9.01071 7.49108C9.01071 7.49108 7.5 9 7.5 9C7.5 9 5.98929 7.49108 5.98929 7.49108L0.70682 2.2149C0.316454 1.825 0.316454 1.19284 0.70682 0.802939L0.803895 0.705979C1.19426 0.316078 1.82717 0.316078 2.21753 0.705979C3.80196 2.28852 7.5 5.98216 7.5 5.98216L12.7825 0.705979C13.1728 0.316078 13.8057 0.316078 14.1961 0.70598L14.2932 0.802939C14.6835 1.19284 14.6835 1.825 14.2932 2.2149Z' id='Icon' fill='%23CCCCCC' stroke='none' /%3E%3C/g%3E%3C/svg%3E",
+    15px,
+    9px
+  );
 }
-
 
 .main_header {
   display: flex;
@@ -253,7 +267,7 @@
     "data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'%3E%3Cdesc%3ECreated with Lunacy%3C/desc%3E%3Cg id='icon-24px-bookmark'%3E%3Cpath d='M0 2L0 20L6 14L12 20L12 2C12 0.348066 11.6555 0 10 0L2 0C0.344719 0 0 0.35068 0 2Z' transform='translate(6 2)' id='bookmark' fill='%23FFFFFF' stroke='none' /%3E%3Cpath d='M0 0L24 0L24 24L0 24L0 0Z' id='Path' fill='none' stroke='none' /%3E%3C/g%3E%3C/svg%3E",
     24px,
     24px
-  )
+  );
 }
 
 .main_button {
@@ -263,4 +277,10 @@
 
 .filter {
   padding: 20px;
+}
+
+.list_title {
+  position: sticky;
+  top: 0px;
+  z-index: 1;
 }

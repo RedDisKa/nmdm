@@ -1,0 +1,103 @@
+@import '../../../../_global.scss';
+
+.container {
+    display: flex;
+    height: 344px;
+}
+
+.map {
+    margin: 30px 40px;
+}
+
+.buttons {
+    margin-top: 16px;
+
+}
+
+%zoom {
+    background: white;
+    border: 1px solid $lavander_gray20;
+    outline: none;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.zoom_more {
+    @extend %zoom;
+    border-radius: 3px 3px 0 0;
+
+    & > span {
+        @include svgBackground(
+            "data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='12px' height='12px' viewBox='0 0 12 12' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'%3E%3Cdesc%3ECreated with Lunacy%3C/desc%3E%3Cdefs%3E%3Cpath d='M6.001 0L5.999 0C5.44727 0 5 0.447268 5 0.999L5 5L0.999 5C0.447268 5 0 5.44727 0 5.999L0 6.001C0 6.55273 0.447268 7 0.999 7L5 7L5 11.001C5 11.5527 5.44727 12 5.999 12L6.001 12C6.55273 12 7 11.5527 7 11.001L7 7L11.001 7C11.5527 7 12 6.55273 12 6.001L12 5.999C12 5.44727 11.5527 5 11.001 5L7 5L7 0.999C7 0.447268 6.55273 0 6.001 0Z' id='path_1' /%3E%3CclipPath id='clip_1'%3E%3Cuse xlink:href='%23path_1' /%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='Combined-Shape'%3E%3Cuse stroke='none' fill='%23323136' xlink:href='%23path_1' fill-rule='evenodd' /%3E%3Cg clip-path='url(%23clip_1)'%3E%3Cuse xlink:href='%23path_1' fill='none' stroke='%23FFFFFF' stroke-width='0.6' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E",
+            12px,
+            12px
+        );
+    }
+}
+
+.zoom_less {
+    @extend %zoom;
+    border-radius: 0 0 3px 3px;
+    margin-top: -1px;
+
+    & > span {
+        @include svgBackground(
+            "data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='12px' height='2px' viewBox='0 0 12 2' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'%3E%3Cdesc%3ECreated with Lunacy%3C/desc%3E%3Cdefs%3E%3Cpath d='M0.999 0L11.001 0C11.5527 0 12 0.447268 12 0.999L12 1.001C12 1.55273 11.5527 2 11.001 2L0.999 2C0.447268 2 0 1.55273 0 1.001L0 0.999C0 0.447268 0.447268 0 0.999 0Z' id='path_1' /%3E%3CclipPath id='clip_1'%3E%3Cuse xlink:href='%23path_1' /%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='Rectangle-45'%3E%3Cuse stroke='none' fill='%23323136' xlink:href='%23path_1' /%3E%3Cg clip-path='url(%23clip_1)'%3E%3Cuse xlink:href='%23path_1' fill='none' stroke='%23FFFFFF' stroke-width='0.6' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E",
+            12px,
+            2px
+        );
+    }
+}
+
+.legend {
+    margin: 20px 20px 0 30px;
+}
+
+.description {
+    @extend %font_regular;
+    letter-spacing: 0px;
+    color: $lavander_gray;
+    text-align: start;
+}
+
+.colors {
+    margin-top: 32px;
+    text-align: start;
+}
+
+.category {
+    @extend %font_medium;
+    color: $gray;
+    display: flex;
+}
+
+%category {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    border-radius: 50%;
+    margin: 0 10px 14px;
+}
+
+.category_1 {
+    @extend %category;
+    background: #99DFFF;
+}
+
+.category_2 {
+    @extend %category;
+    background: #56C2F3;
+}
+
+.category_3 {
+    @extend %category;
+    background: $menu_blue;
+}
+
+.category_4 {
+    @extend %category;
+    background: #0071A3;
+}

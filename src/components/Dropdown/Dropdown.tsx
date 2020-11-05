@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import ReactDropdown from 'react-dropdown'
 import s from './dropdown.module.scss'
 import Dropdown from 'react-dropdown';
 import classnames from 'classnames';

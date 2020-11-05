@@ -1,5 +1,5 @@
 import React from 'react'
-import Tree, { TreeNode } from 'rc-tree'
+import Tree from 'rc-tree'
 import {TreeNodeType} from '../../types'
 import './rc-tree.scss';
 import s from './simpletree.module.scss'
@@ -10,14 +10,6 @@ interface Props {
 }
 
 export const SimpleTree = ({nodes, showTotal}: Props) => {
-
-    const getTreeNode = (node: TreeNodeType) => (
-        <TreeNode title={node.title}>
-            {node.children && node.children.map((node, index) => (
-                getTreeNode(node)
-            ))}
-        </TreeNode>
-    )
 
     const calculateTotal = (nodes: TreeNodeType[]) => {
         let total = nodes.length

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { ListComponent, ListTitle } from "../../components/List/List";
 import { Panel } from "../../components/Panel/Panel";
-import { ORGANIZATION, PERSON } from "../../constants/partyType";
-import { Customer, HistoryItem, ListItem, TreeNodeType } from "../../types";
+import { ORGANIZATION } from "../../constants/partyType";
+import { HistoryItem, ListItem, TreeNodeType } from "../../types";
 import s from "./customerdetailspage.module.scss";
 import classnames from 'classnames';
 import { Button } from "../../components/Button/Button";

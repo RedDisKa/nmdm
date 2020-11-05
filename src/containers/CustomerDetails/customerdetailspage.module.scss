@@ -81,11 +81,8 @@
   margin: 0 20px;
   display: flex;
   flex-direction: column;
-  align-items: start;
-  font-family: LatoRegular;
-  font-size: 24px;
-  line-height: 29px;
-  letter-spacing: 0.4px;
+  align-items: flex-start;
+  @extend %font_extra_large;
   color: $black;
   margin-top: 6px;
 

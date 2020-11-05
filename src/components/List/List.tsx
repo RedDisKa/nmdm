@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import s from "./list.module.scss";
+import classnames from 'classnames';
 
 interface ListTitleProps {
-  title: string, 
+  title: string,
+  className?: string, 
   actions?: []
 }
 
@@ -20,9 +22,9 @@ const ITEM_HEIGHT = {
   large: 70
 };
 
-export const ListTitle = ({title, actions}: ListTitleProps) => {
+export const ListTitle = ({title, actions, className}: ListTitleProps) => {
   return (
-    <div className={s.list_title_container}>
+    <div className={classnames(s.list_title_container, className)}>
         <p className={s.list_title}>{title}</p>
         {actions && <span className={s.actions_icon} />}
       </div>
@@ -64,7 +66,7 @@ export const ListComponent = ({
             className={s[`list_item_${itemSize}`]}
           >
             <div className={s.item_content}>
-              <img src={image} className={s[`logo_image_${itemSize}`]} />
+              <img src={image} className={s[`logo_image_${itemSize}`]} alt='' />
               <div className={s.item_info}>
                 <p className={s.list_item_name}>{name}</p>
                 {description && (

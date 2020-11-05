@@ -80,3 +80,19 @@ export interface HistoryItem {
   userAvatar: string,
   actionTime: string
 }
+
+export interface AssignedTask {
+  priority: 'high' | 'medium' | 'low',
+  type: 'Created' | 'Hierarchy Updated' | 'Updated',
+  created: string,
+  dueDate: string,
+  description: string,
+  user: {
+    name: string,
+    avatar: string
+  },
+  customer: {
+    name: string,
+    logo: string
+  }
+}

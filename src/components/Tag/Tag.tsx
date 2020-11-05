@@ -4,7 +4,7 @@ import classnames from 'classnames'
 
 interface Props {
     title: string,
-    type: 'blue' | 'purple', // | 'orange' | 'grey' | 'green' | 'yellow',
+    type: 'blue' | 'purple' | 'green' | 'turquoise', // | 'orange' | 'grey' | 'green' | 'yellow',
     paintedOver?: boolean,
     fill?: boolean,
     onDelete?: (title: string) => void

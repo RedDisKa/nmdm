@@ -1,0 +1,141 @@
+@import "../../_global.scss";
+
+.filters_container {
+  display: flex;
+  margin: 20px auto;
+
+  & > div.panel {
+    width: 260px;
+    height: 140px;
+    padding: 19px 20px 0px;
+  }
+
+  & > div.panel + div.panel {
+    margin-left: 20px;
+  }
+}
+
+.filter_title {
+  @extend %font_medium;
+  color: $black;
+  text-align: start;
+}
+
+.filter_columns_first {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter_columns_second {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter_value {
+  font-family: LatoRegular;
+  font-size: 34px;
+  line-height: 41px;
+  letter-spacing: 0.38px;
+  color: $black;
+}
+
+.vs_previous_month {
+  @extend %font_regular;
+  color: $gray;
+}
+
+.filter_change {
+  font-family: LatoBold;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.4px;
+
+  &.positive {
+    color: #2aa520;
+  }
+
+  &.negative {
+    color: #ec4f4f;
+  }
+
+  &.positive > span {
+    margin-left: 5px;
+    @include svgBackground(
+      "data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='9px' height='13px' viewBox='0 0 9 13' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'%3E%3Cdesc%3ECreated with Lunacy%3C/desc%3E%3Cg id='icon-green' transform='translate(0.5 0.5)'%3E%3Cpath d='M6.93636 3.83478C6.83455 3.83478 6.68182 3.83478 6.63091 3.73043L3.93273 0.965217C3.78 0.808696 3.52545 0.808696 3.37273 0.965217L0.674545 3.73043C0.521818 3.88696 0.267273 3.88696 0.114545 3.73043C-0.0381818 3.57391 -0.0381818 3.31304 0.114545 3.15652L2.81273 0.391304C3.32182 -0.130435 4.03455 -0.130435 4.54364 0.391304L7.24182 3.15652C7.39455 3.31304 7.39455 3.57391 7.24182 3.73043C7.19091 3.78261 7.03818 3.83478 6.93636 3.83478Z' id='Path' fill='%23399734' stroke='%23399734' stroke-width='1' stroke-linejoin='round' /%3E%3Cpath d='M0.407273 10.8522C0.152727 10.8522 0 10.6957 0 10.4348L0 0.417391C0 0.156522 0.152727 0 0.407273 0C0.661818 0 0.814545 0.156522 0.814545 0.417391L0.814545 10.4348C0.814545 10.5913 0.661818 10.8522 0.407273 10.8522Z' transform='translate(3.270908 0.4956512)' id='Path' fill='%23399734' stroke='%23399734' stroke-width='1' stroke-linejoin='round' /%3E%3C/g%3E%3C/svg%3E",
+      9px,
+      13px
+    );
+    display: inline-block;
+    margin-bottom: -2px;
+  }
+
+  &.negative > span {
+    margin-left: 5px;
+    @include svgBackground(
+      "data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='9px' height='13px' viewBox='0 0 9 13' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'%3E%3Cdesc%3ECreated with Lunacy%3C/desc%3E%3Cg id='icon-red' transform='matrix(1 0 0 -1 0.5 11.84781)'%3E%3Cpath d='M6.93636 3.83478C6.83455 3.83478 6.68182 3.83478 6.63091 3.73043L3.93273 0.965217C3.78 0.808696 3.52545 0.808696 3.37273 0.965217L0.674545 3.73043C0.521818 3.88696 0.267273 3.88696 0.114545 3.73043C-0.0381818 3.57391 -0.0381818 3.31304 0.114545 3.15652L2.81273 0.391304C3.32182 -0.130435 4.03455 -0.130435 4.54364 0.391304L7.24182 3.15652C7.39455 3.31304 7.39455 3.57391 7.24182 3.73043C7.19091 3.78261 7.03818 3.83478 6.93636 3.83478Z' id='Path' fill='%23EC4F4F' stroke='%23EC4F4F' stroke-width='1' stroke-linejoin='round' /%3E%3Cpath d='M0.407273 10.8522C0.152727 10.8522 0 10.6957 0 10.4348L0 0.417391C0 0.156522 0.152727 0 0.407273 0C0.661818 0 0.814545 0.156522 0.814545 0.417391L0.814545 10.4348C0.814545 10.5913 0.661818 10.8522 0.407273 10.8522Z' transform='translate(3.270912 0.495636)' id='Path' fill='%23EC4F4F' stroke='%23EC4F4F' stroke-width='1' stroke-linejoin='round' /%3E%3C/g%3E%3C/svg%3E",
+      9px,
+      13px
+    );
+    display: inline-block;
+    margin-bottom: -2px;
+  }
+}
+
+.chart_container {
+  margin-right: -30px;
+  margin-bottom: -10px;
+
+  & rect {
+    rx: 3;
+  }
+}
+
+.circle_chart_container {
+  margin: 11px 0 6px 0;
+}
+
+.dashboard_columns {
+  display: flex;
+  margin: 0 auto 20px;
+}
+
+.left_column {
+  width: calc(260px * 3 + 40px);
+
+  & > .panel + .panel {
+    margin-top: 20px;
+  }
+}
+
+.right_column {
+  width: calc(260px * 2 + 20px);
+  margin-left: 20px;
+
+  & > .panel + .panel {
+    margin-top: 20px;
+  }
+
+  & > .panel:last-child {
+    display: flex;
+    overflow: visible;
+  }
+
+  & > .panel:last-child > .panel {
+    flex: 1;
+  }
+
+  & > .panel:last-child > .panel + .panel {
+    margin-left: 20px;
+  }
+}
+
+.panel {
+  overflow: hidden;
+}
+
+.records_container {
+  display: flex;
+  justify-content: space-around;
+}

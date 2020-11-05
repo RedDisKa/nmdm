@@ -48,6 +48,36 @@
   }
 }
 
+.green {
+  color: $bright_green;
+  border: 1px solid $bright_green;
+  background-color: $bright_green10;
+
+  &.painted_over {
+    background-color: $bright_green;
+    color: white;
+  }
+
+  & > .delete_icon {
+    @include deleteIcon("00BE1E");
+  }
+}
+
+.turquoise {
+  color: $turquoise;
+  border: 1px solid $turquoise;
+  background-color: $turquoise10;
+
+  &.painted_over {
+    background-color: $turquoise;
+    color: white;
+  }
+
+  & > .delete_icon {
+    @include deleteIcon("26C1C9");
+  }
+}
+
 .not_filled {
   background-color: white;
 }
