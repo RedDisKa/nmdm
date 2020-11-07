@@ -91,13 +91,36 @@
   }
 }
 
-.viewing_icon {
+.view_icon {
   @include svgBackground(
     "data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='18px' height='18px' viewBox='0 0 18 18' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'%3E%3Cdesc%3ECreated with Lunacy%3C/desc%3E%3Cg id='Icons-/-18px-/-View'%3E%3Cpath d='M0 0L18 0L18 18L0 18L0 0Z' id='Path' fill='none' stroke='none' /%3E%3Cpath d='M0 6C1.41545 2.488 4.90909 0 9 0C13.0909 0 16.5845 2.488 18 6C16.5845 9.512 13.0909 12 9 12C4.90909 12 1.41545 9.512 0 6ZM9 10C6.74182 10 4.90909 8.208 4.90909 6C4.90909 3.792 6.74182 2 9 2C11.2582 2 13.0909 3.792 13.0909 6C13.0909 8.208 11.2582 10 9 10ZM6.54545 6C6.54545 4.672 7.64182 3.6 9 3.6C10.3582 3.6 11.4545 4.672 11.4545 6C11.4545 7.328 10.3582 8.4 9 8.4C7.64182 8.4 6.54545 7.328 6.54545 6Z' transform='translate(0 3)' id='Shape' fill='%23FFFFFF' fill-rule='evenodd' stroke='none' /%3E%3C/g%3E%3C/svg%3E",
-    18px,
-    18px
+    14px,
+    14px
   );
-  margin-right: 10px;
+}
+
+.edit_icon {
+  @include svgBackground(
+    "data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='18px' height='18px' viewBox='0 0 18 18' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'%3E%3Cdesc%3ECreated with Lunacy%3C/desc%3E%3Cg id='Icons-/-18px-/-View'%3E%3Cpath d='M0 0L18 0L18 18L0 18L0 0Z' id='Path' fill='none' stroke='none' /%3E%3Cpath d='M0 6C1.41545 2.488 4.90909 0 9 0C13.0909 0 16.5845 2.488 18 6C16.5845 9.512 13.0909 12 9 12C4.90909 12 1.41545 9.512 0 6ZM9 10C6.74182 10 4.90909 8.208 4.90909 6C4.90909 3.792 6.74182 2 9 2C11.2582 2 13.0909 3.792 13.0909 6C13.0909 8.208 11.2582 10 9 10ZM6.54545 6C6.54545 4.672 7.64182 3.6 9 3.6C10.3582 3.6 11.4545 4.672 11.4545 6C11.4545 7.328 10.3582 8.4 9 8.4C7.64182 8.4 6.54545 7.328 6.54545 6Z' transform='translate(0 3)' id='Shape' fill='%23FFFFFF' fill-rule='evenodd' stroke='none' /%3E%3C/g%3E%3C/svg%3E",
+    14px,
+    14px
+  );
+}
+
+.delete_icon {
+  @include svgBackground(
+    "data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='18px' height='18px' viewBox='0 0 18 18' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'%3E%3Cdesc%3ECreated with Lunacy%3C/desc%3E%3Cdefs%3E%3Crect width='18' height='18' id='artboard_1' /%3E%3CclipPath id='clip_1'%3E%3Cuse xlink:href='%23artboard_1' clip-rule='evenodd' /%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='Icons-/-18px-/-Delete' clip-path='url(%23clip_1)'%3E%3Cuse xlink:href='%23artboard_1' stroke='none' fill='none' /%3E%3Cpath d='M0 0L18 0L18 18L0 18L0 0Z' id='Path' fill='none' stroke='none' /%3E%3Cpath d='M9.83419 0.243445C9.75115 0.0952267 9.59152 0 9.4149 0L5.58511 0L5.49849 0.00774002C5.32919 0.038309 5.1868 0.157066 5.13095 0.321775L4.60176 1.88235L0.478723 1.88235L0.392672 1.88994C0.169349 1.92978 0 2.12192 0 2.35294C0 2.61284 0.214332 2.82353 0.478723 2.82353L1.32084 2.82353L2.46607 14.4141C2.53419 15.306 3.30023 16.0025 4.2205 16L10.784 16C11.703 16.0025 12.469 15.306 12.538 14.4039L13.6793 2.82353L14.5213 2.82353L14.6073 2.81595C14.8307 2.7761 15 2.58396 15 2.35294C15 2.09304 14.7857 1.88235 14.5213 1.88235L10.3982 1.88235L9.86905 0.321775L9.83419 0.243445ZM10.0422 2.82353C10.0495 2.8237 10.0568 2.8237 10.0641 2.82353L12.7168 2.82353L11.5841 14.3232C11.5519 14.7434 11.2037 15.06 10.7854 15.0588L9.59835 15.0588L9.92852 3.92586L9.92332 3.84109C9.88931 3.62049 9.69886 3.44849 9.46395 3.44176C9.19967 3.43419 8.97918 3.63865 8.97148 3.89844L8.64049 15.0588L6.3595 15.0588L6.02852 3.89844L6.0183 3.81411C5.97128 3.59583 5.77097 3.43503 5.53605 3.44176C5.27177 3.44934 5.06378 3.66608 5.07148 3.92586L5.40165 15.0588L4.21915 15.0588L4.11587 15.0526C3.74366 15.0066 3.44868 14.7092 3.41993 14.3333L2.28159 2.82353L4.93592 2.82353C4.94324 2.8237 4.95055 2.8237 4.95784 2.82353L10.0422 2.82353ZM9.38864 1.88235L9.06894 0.941176L5.92947 0.941176L5.61073 1.88235L9.38864 1.88235Z' transform='translate(1.5 1)' id='Combined-Shape' fill='%23FFFFFF' fill-rule='evenodd' stroke='none' /%3E%3C/g%3E%3C/svg%3E",
+    14px,
+    14px
+  );
+}
+
+.suggest_icon {
+  @include svgBackground(
+    "data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='18px' height='18px' viewBox='0 0 18 18' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'%3E%3Cdesc%3ECreated with Lunacy%3C/desc%3E%3Cg id='Icons-/-18px-/-View'%3E%3Cpath d='M0 0L18 0L18 18L0 18L0 0Z' id='Path' fill='none' stroke='none' /%3E%3Cpath d='M0 6C1.41545 2.488 4.90909 0 9 0C13.0909 0 16.5845 2.488 18 6C16.5845 9.512 13.0909 12 9 12C4.90909 12 1.41545 9.512 0 6ZM9 10C6.74182 10 4.90909 8.208 4.90909 6C4.90909 3.792 6.74182 2 9 2C11.2582 2 13.0909 3.792 13.0909 6C13.0909 8.208 11.2582 10 9 10ZM6.54545 6C6.54545 4.672 7.64182 3.6 9 3.6C10.3582 3.6 11.4545 4.672 11.4545 6C11.4545 7.328 10.3582 8.4 9 8.4C7.64182 8.4 6.54545 7.328 6.54545 6Z' transform='translate(0 3)' id='Shape' fill='%23FFFFFF' fill-rule='evenodd' stroke='none' /%3E%3C/g%3E%3C/svg%3E",
+    14px,
+    14px
+  );
 }
 
 .viewing_arrow_icon {

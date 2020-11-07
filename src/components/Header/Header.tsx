@@ -5,10 +5,17 @@ import s from './header.module.scss'
 import { Search } from './Search'
 import classnames from 'classnames'
 import avatar from '../../resources/testimages/avatar.png'
+import { DropdownButton } from 'components/DropdownButton/DropdownButton'
 
 export const Header = () => {
 
     const history = useHistory();
+
+    const NEW_ACTIONS = [
+        {id: 'new_customer', onClick: () => history.push(ROUTE.createcustomer()), title: 'New Customer', iconStyle: s.new_button_add_icon },
+        {id: 'new_task', onClick: () => {}, title: 'New Task', iconStyle: s.new_button_add_icon },
+        {id: 'new_hierarchy', onClick: () => {}, title: 'New Hierarchy', iconStyle: s.new_button_add_icon }
+    ]
 
     const [newEvents, ] = useState(false as boolean)
     const [user, ] = useState({image: avatar})
@@ -25,17 +32,6 @@ export const Header = () => {
                 {title}
             </button>
         )
-    }
-
-    const getNewButton = () => {
-        return <button
-        className={s.new_button}
-        onClick={() => history.push(ROUTE.createcustomer())}
-        >
-            <span className={s.new_button_add_icon} />
-            <span className={s.new_button_extend_icon} />
-            New
-        </button>
     }
 
     return (<React.Fragment>
@@ -55,7 +51,7 @@ export const Header = () => {
                 {getMenuButton('Task Manager', ROUTE.taskmanager(), s.task_manager_icon, s.task_manager_icon_active)}
                 {getMenuButton('Hierarchy', ROUTE.hierarchymanagement(), s.hierarchy_management_icon, s.hierarchy_management_icon_active)}
             </div>
-            {getNewButton()}
+            <DropdownButton actions={NEW_ACTIONS} color='orange' defaultAction={{title: 'New', iconStyle: s.new_button_add_icon, id: 'new'}} dropToNull={true} />
         </div>
     </React.Fragment>)
 }

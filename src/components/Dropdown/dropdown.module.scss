@@ -19,11 +19,6 @@
   margin-bottom: 20px;
 }
 
-.dropdown.focused {
-    border-color: $menu_blue;
-        color: $menu_blue;
-}
-
 .dropdown {
   height: 100%;
   @extend %font_medium;
@@ -48,7 +43,7 @@
   max-height: 200px;
   overflow-y: auto;
   position: absolute;
-  top: 100%;
+  top: 0;
   width: 100%;
   z-index: 1000;
   border-radius: 6px;
@@ -58,7 +53,7 @@
   text-align: start;
 
   & > div {
-      padding: 8px 12px;
+      padding: 9px 12px 8px;
       border-bottom: 1px solid $grayCACACA;
   }
 
@@ -78,5 +73,3 @@
   );
 }
 
-.placeholder {
-}

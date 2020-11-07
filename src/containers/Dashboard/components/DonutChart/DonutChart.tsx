@@ -13,8 +13,8 @@ interface Props {
 }
 
 export const DonutChart = ({ data }: Props) => {
-  const getLegendItem = (item: Item) => (
-    <p>
+  const getLegendItem = (item: Item, key: number) => (
+    <p key={key}>
       <span style={{ background: item.color }} />
       {item.title}
     </p>
@@ -57,12 +57,12 @@ export const DonutChart = ({ data }: Props) => {
       <div className={s.legend}>
         <div>
           {data.map((item, index) =>
-            index < data.length / 2 ? getLegendItem(item) : null
+            index < data.length / 2 ? getLegendItem(item, index) : null
           )}
         </div>
         <div>
           {data.map((item, index) =>
-            index >= data.length / 2 ? getLegendItem(item) : null
+            index >= data.length / 2 ? getLegendItem(item, index) : null
           )}
         </div>
       </div>

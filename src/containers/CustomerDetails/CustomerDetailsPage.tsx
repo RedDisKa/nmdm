@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ListComponent, ListTitle } from "../../components/List/List";
 import { Panel } from "../../components/Panel/Panel";
-import { ORGANIZATION } from "../../constants/partyType";
 import { HistoryItem, ListItem, TreeNodeType } from "../../types";
 import s from "./customerdetailspage.module.scss";
 import classnames from 'classnames';
@@ -10,11 +9,12 @@ import { Tag } from "../../components/Tag/Tag";
 import { SimpleTree } from "../../components/SimpleTree/SimpleTree";
 import { Bar } from "react-chartjs-2";
 import { HistoryList } from "../../components/HistoryList/HistoryList";
+import { DropdownButton } from "components/DropdownButton/DropdownButton";
 
 const TEST_DATA = {
   logo: 'https://w7.pngwing.com/pngs/980/413/png-transparent-apple-logo-business-iphone-apple-heart-computer-logo.png',
 
-  partyType: ORGANIZATION,
+  partyType: '2',
   organizationName: "Apple Inc.",
 
   firstGivenName: 'Anna',
@@ -275,6 +275,13 @@ const TEST_HISTORY = [
   {userName: 'Andries Grootoonk', action: 'checked', actionTime: '09.27.2017 - 9:55:39 AM', userAvatar: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80'},
 ] as HistoryItem[]
 
+const NEW_ACTIONS = [
+  {id: 'edit', onClick: () => {}, title: 'Editing', iconStyle: s.edit_icon },
+  {id: 'suggest', onClick: () => {}, title: 'Suggesting', iconStyle: s.suggest_icon },
+  {id: 'veiw', onClick: () => {}, title: 'Viewing', iconStyle: s.view_icon },
+  {id: 'delete', onClick: () => {}, title: 'Delete', iconStyle: s.delete_icon }
+]
+
 export const CustomerDetailsPage = () => {
   const [customer, setCustomer] = useState(undefined as any);
   const [employeeList, setEmployeeList] = useState([] as ListItem[]);
@@ -305,7 +312,7 @@ export const CustomerDetailsPage = () => {
               </div>
               <div className={s.main_header_info}>
                 <p>
-                  {customer.partyType === ORGANIZATION
+                  {customer.partyType === '2'
                     ? customer.organizationName
                     : customer.firstGivenName}
                 </p>
@@ -313,19 +320,13 @@ export const CustomerDetailsPage = () => {
                   type="blue"
                   fill={true}
                   title={
-                    customer.partyType === ORGANIZATION
+                    customer.partyType === '2'
                       ? "Organization"
                       : "Person"
                   }
                 />
               </div>
-              <Button
-                title="Viewing"
-                type="blue"
-                onClick={() => {}}
-                iconOnStart={<span className={s.viewing_icon} />}
-                iconOnEnd={<span className={s.viewing_arrow_icon} />}
-              />
+              <DropdownButton actions={NEW_ACTIONS} color='blue' defaultAction={NEW_ACTIONS[2]} dropToNull={false} />
             </div>
             <div className={s.columns}>
               <div>

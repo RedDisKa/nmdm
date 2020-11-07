@@ -30,7 +30,7 @@ export const GaugeChart = ({ minValue, maxValue, value, formattedValue, formatte
             <defs>
               <filter
                 filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
+                colorInterpolationFilters="sRGB"
                 id="filter_1"
               >
                 <feFlood floodOpacity="0" result="BackgroundImageFix" />
@@ -64,7 +64,7 @@ export const GaugeChart = ({ minValue, maxValue, value, formattedValue, formatte
                 transform="translate(1.5 2.5)"
                 id="Pointer"
                 fill="#3C3C3C"
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 stroke="none"
               />
             </g>

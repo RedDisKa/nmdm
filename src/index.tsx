@@ -1,15 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { HashRouter as Router } from 'react-router-dom'
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import { HashRouter as Router } from "react-router-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { Provider } from 'react-redux'
+
+// import 'setupProxy'
+
+import {configureStore} from './redux/store/configureStore'
+
+const store = configureStore()
 
 ReactDOM.render(
-  <Router basename='/'>
+  <Provider store={store}>
+    <Router basename="/">
       <App />
-    </Router>,
-  document.getElementById('root')
+    </Router>
+  </Provider>,
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

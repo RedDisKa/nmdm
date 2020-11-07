@@ -17,10 +17,12 @@ export const FrequentlyUsedTable = ({ items }: Props) => {
   return (
     <div className={s.table_container}>
       <table className={s.table}>
-        <tr className={s.header}>
-          <th>Country</th>
-          <th>Companies</th>
-        </tr>
+        <thead>
+          <tr className={s.header}>
+            <th>Country</th>
+            <th>Companies</th>
+          </tr>
+        </thead>
       </table>
       <div
         className={s.container}

@@ -10,8 +10,6 @@ interface Props {
 
 export const Checkbox = ({title, name, value, onChange}: Props) => {
 
-    console.log(value)
-
     return (
         <div className={s.checkbox}>
             <span className={value ? s.checkbox_icon_checked : s.checkbox_icon} onClick={() => onChange(name, !value)} />
