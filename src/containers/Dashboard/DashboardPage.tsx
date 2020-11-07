@@ -13,6 +13,8 @@ import { TasksAssignedList } from "./components/TasksAssignedList/TasksAssignedL
 import { GaugeChart } from "./components/GaugeChart/GaugeChart";
 import { MergeStatsChart } from "./components/MergeStats/MergeStatsChart";
 import { CircleChart } from "./components/CircleChart/CircleChart";
+import { TripleCircleChart } from "./components/TripleCircleChart/TripleCircleChart";
+import { DonutChart } from "./components/DonutChart/DonutChart";
 
 const TEST_FREQUENTLY_USED = [
   {
@@ -241,7 +243,7 @@ export const DashboardPage = () => {
     circle?: boolean,
     chartData?: number | number[],
     minValueForCircle?: number,
-    maxValueForCircle?: number,
+    maxValueForCircle?: number
   ) => {
     const newData: any[][] = clone(data);
     newData.forEach((item, index) => {
@@ -330,7 +332,7 @@ export const DashboardPage = () => {
           true,
           33,
           0,
-          100,
+          100
         )}
         {getFilterPanel("Requests Completed", "1,3k", "0.5%", false, "#0891CD")}
       </div>
@@ -427,9 +429,60 @@ export const DashboardPage = () => {
           <div className={s.panel}>
             <Panel classNames={s.panel}>
               <ListTitle title="Users" actions={[]} />
+              <DonutChart
+                data={[
+                  {
+                    value: 25,
+                    title: "Mauris non tempo.",
+                    color: "#E89981",
+                  },
+                  {
+                    value: 25,
+                    title: "Nam porttitor.",
+                    color: "#E881B7",
+                  },
+                  {
+                    value: 35,
+                    title: "Vestibulum ru.",
+                    color: "#E8DC81",
+                  },
+                  {
+                    value: 15,
+                    title: "In hac habi.",
+                    color: "#5CC4AD",
+                  },
+                ]}
+              />
             </Panel>
             <Panel classNames={s.panel}>
               <ListTitle title="Active Users" actions={[]} />
+              <TripleCircleChart
+                value={6675}
+                title="Active users"
+                data={[
+                  {
+                    minValue: 0,
+                    maxValue: 100,
+                    value: 90,
+                    title: "Mauris",
+                    color: "#5CC4AD",
+                  },
+                  {
+                    minValue: 0,
+                    maxValue: 100,
+                    value: 64,
+                    title: "Porttitor",
+                    color: "#DE77AD",
+                  },
+                  {
+                    minValue: 0,
+                    maxValue: 100,
+                    value: 42,
+                    title: "Vestibulum",
+                    color: "#E8DC81",
+                  },
+                ]}
+              />
             </Panel>
           </div>
         </div>

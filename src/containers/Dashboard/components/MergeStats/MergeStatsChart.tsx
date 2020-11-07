@@ -57,10 +57,9 @@ export const MergeStatsChart = ({ data }: Props) => {
           colors: ["#38D728", "#87DBFF", "#FFB500"],
           hAxis: {
             textStyle: {
+              fontName: "LatoRegular",
+              fontSize: "10px",
               color: "#999999",
-              fontFamily: "LatoRegular",
-              "font-size": "16px",
-              "line-height": "19px",
             },
           },
           vAxis: {
@@ -70,10 +69,9 @@ export const MergeStatsChart = ({ data }: Props) => {
             baselineColor: "none",
             gridlines: { color: "rgba(120, 115, 137, .5)" },
             textStyle: {
+              fontName: "LatoRegular",
+              fontSize: "10px",
               color: "#999999",
-              fontFamily: "LatoRegular",
-              "font-size": "16px",
-              "line-height": "19px",
             },
           },
         }}

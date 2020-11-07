@@ -1,7 +1,7 @@
 @import "../../../../_global.scss";
 
 .container {
-  padding: 24px 8px 32px;
+  padding: 24px 8px 24px;
   position: relative;
 }
 
@@ -15,7 +15,7 @@
   @extend %font_small;
   color: $gray;
   position: absolute;
-  bottom: 56px;
+  bottom: 48px;
 }
 
 .min_value {
