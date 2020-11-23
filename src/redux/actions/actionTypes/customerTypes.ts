@@ -1,5 +1,3 @@
-import { Customer } from "types";
-
 export const CUSTOMER_CREATE_REQUEST = 'customer_create_request';
 export const CUSTOMER_CREATE_FINISHED = 'customer_create_finished';
 export const CUSTOMER_CREATE_FAILURE = 'customer_create_failure';

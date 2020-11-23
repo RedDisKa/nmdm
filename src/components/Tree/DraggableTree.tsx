@@ -15,14 +15,6 @@ interface Props {
 
 export const DraggableTree = ({nodes, showTotal, onItemSelect, onItemChangedPosition}: Props) => {
 
-    const getTreeNode = (node: TreeNodeType) => (
-        <TreeNode title={node.title}>
-            {node.children && node.children.map((node, index) => (
-                getTreeNode(node)
-            ))}
-        </TreeNode>
-    )
-
     const calculateTotal = (nodes: TreeNodeType[]) => {
         let total = nodes.length
         nodes.forEach(node => {
@@ -30,6 +22,26 @@ export const DraggableTree = ({nodes, showTotal, onItemSelect, onItemChangedPosi
         });
         return total
     }
+
+    const getTitleWithCount = (title: string, count: number) => (
+        <div className={s.custom_title}>
+          <p>{title}</p>
+          <p>{count}</p>
+        </div>
+      );
+    
+      const getNode = (node: TreeNodeType) => (
+        <TreeNode
+          title={
+            node.children && node.children.length > 0
+              ? getTitleWithCount(node.title, node.children.length)
+              : node.title
+          }
+          key={node.key}
+        >
+          {node.children && node.children.map((child) => getNode(child))}
+        </TreeNode>
+      );    
 
     return (
         <div>
@@ -41,8 +53,6 @@ export const DraggableTree = ({nodes, showTotal, onItemSelect, onItemChangedPosi
         )}
         <Tree
                 defaultExpandAll={true}
-                defaultExpandedKeys={['1']}
-                treeData={nodes}
                 selectable={true}
                 draggable={true}
                 onDrop={(info: NodeDragEventParams<HTMLDivElement> & {
@@ -61,7 +71,10 @@ export const DraggableTree = ({nodes, showTotal, onItemSelect, onItemChangedPosi
                     selectedNodes: DataNode[];
                     nativeEvent: MouseEvent;
                 }) => onItemSelect && onItemSelect((info.selectedNodes[0] as TreeNodeType))}
-            />
+                dropIndicatorRender={() => (null)}
+            >
+                {nodes.map((node) => getNode(node))}
+            </Tree>
         </div>
     )
 }

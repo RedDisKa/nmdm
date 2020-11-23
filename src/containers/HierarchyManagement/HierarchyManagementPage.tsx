@@ -5,6 +5,7 @@ import { ListTitle } from "../../components/List/List";
 import { Panel } from "../../components/Panel/Panel";
 import { TreeNodeType } from "../../types";
 import s from "./hierarchymanagementpage.module.scss";
+import { clone } from "utils";
 
 const TEST_DATA = [
   {
@@ -39,7 +40,21 @@ const TEST_DATA = [
   },
 ] as TreeNodeType[];
 
-const clone = (array: any[]) => (JSON.parse(JSON.stringify(array)))
+const findNodeByKey = (
+  tree: TreeNodeType[] | undefined,
+  key: string
+): TreeNodeType | undefined => {
+  if (!tree || !key) return undefined;
+  var result;
+  for (let i = 0; !result && i < tree.length; i++) {
+    if (tree[i].key === key) {
+      return tree[i];
+    } else if (tree[i].children) {
+      result = findNodeByKey(tree[i].children!, key);
+    }
+  }
+  return result;
+};
 
 export const HierarchyManagementPage = () => {
   const [hierarchy, setHierarchy] = useState(
@@ -48,39 +63,36 @@ export const HierarchyManagementPage = () => {
   const [hierarchyState, setHierarchyState] = useState(
     undefined as TreeNodeType[] | undefined
   );
-  const [hierarchyPartState, setHierarchyPartState] = useState(
-    undefined as TreeNodeType[] | undefined
+  const [selectedNode, setSelectedNode] = useState(
+    undefined as string | undefined
   );
 
   useEffect(() => {
     setHierarchy(clone(TEST_DATA));
-    console.log('setHierarchyState1')
     setHierarchyState(clone(TEST_DATA));
   }, []);
 
   const onReset = () => {
-    console.log('setHierarchyState2')
     setHierarchyState(hierarchy ? clone(hierarchy) : undefined);
-    setHierarchyPartState(undefined)
+    setSelectedNode(undefined);
   };
 
   const onSave = () => {
     console.log(hierarchyState);
   };
 
-  const onSelectItem = (node: TreeNodeType) => {
-    setHierarchyPartState([node]);
+  const onSelectItem = (node: any) => {
+    if (node) {
+      setSelectedNode(node.key);
+    } else {
+      setSelectedNode(undefined);
+    }
   };
 
   const onItemChangedPosition = (
     droppedNode: TreeNodeType,
     destinationNode: TreeNodeType
   ) => {
-      console.log('droppedNode')
-      console.log(droppedNode)
-      console.log('destinationNode')
-      console.log(destinationNode)
-
     const searchTree = (
       parentNode: TreeNodeType | undefined,
       element: TreeNodeType[],
@@ -90,7 +102,7 @@ export const HierarchyManagementPage = () => {
         | { parent: TreeNodeType | undefined; node: TreeNodeType }
         | undefined;
       for (let i = 0; !result && i < element.length; i++) {
-        if (element[i].key == key) {
+        if (element[i].key === key) {
           return { parent: parentNode, node: element[i] };
         } else if (element[i].children) {
           result = searchTree(element[i], element[i]!.children!, key);
@@ -100,39 +112,42 @@ export const HierarchyManagementPage = () => {
     };
 
     if (hierarchyState) {
-        const newHierarchyState = clone(hierarchyState)
+      const newHierarchyState = clone(hierarchyState);
 
-        const searchResult = searchTree(undefined, newHierarchyState, droppedNode.key)
-        const searchDestinationResult = searchTree(undefined, newHierarchyState, destinationNode.key)
-        if (searchResult && searchDestinationResult) {
-            const {parent, node} = searchResult
-        
-        const {node: destination} = searchDestinationResult
+      const searchResult = searchTree(
+        undefined,
+        newHierarchyState,
+        droppedNode.key
+      );
+
+      const searchDestinationResult = searchTree(
+        undefined,
+        newHierarchyState,
+        destinationNode.key
+      );
+      if (searchResult && searchDestinationResult) {
+        const { parent, node } = searchResult;
+
+        const { node: destination } = searchDestinationResult;
+
         if (destination && node) {
-            if (!destination.children) {
-                destination.children = []
-            }
-            destination.children.push(node)
-            if (parent) {
-                const index = parent.children!.findIndex((child) => child.key === node.key)
-                if (index > 0) parent.children!.splice(index, 1)
-            }
+          if (!destination.children) {
+            destination.children = [];
+          }
+          destination.children.push(node);
+          if (parent) {
+            const index = parent.children!.findIndex(
+              (child) => child.key === node.key
+            );
+            if (index >= 0) parent.children!.splice(index, 1);
+          }
         }
-        console.log('hierarchyState change')
-        console.log('setHierarchyState3')
-        setHierarchyState(newHierarchyState)
-        
-        // if (hierarchyPartState) {
-        //     const partNode = searchTree(undefined, newHierarchyState, hierarchyPartState[0].key)!.node
-        //     if (partNode) setHierarchyPartState([partNode])
-        // }
+        setHierarchyState(newHierarchyState);
+      }
     }
-    }
-    
   };
 
-  console.log('hierarchyState')
-  console.log(hierarchyState)
+  const hierarchyPartState = selectedNode ? findNodeByKey(hierarchyState, selectedNode) : undefined
 
   return (
     <React.Fragment>
@@ -150,9 +165,9 @@ export const HierarchyManagementPage = () => {
         </Panel>
         <Panel classNames={s.right_tree}>
           <ListTitle title="Canvas" actions={[]} />
-          {hierarchyPartState && (
+          {selectedNode && hierarchyPartState && (
             <DraggableTree
-              nodes={hierarchyPartState}
+              nodes={[hierarchyPartState]}
               showTotal={false}
               onItemChangedPosition={onItemChangedPosition}
             />

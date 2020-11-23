@@ -2,7 +2,7 @@ import { useCallback, useEffect } from "react"
 import { useDispatch, useSelector, shallowEqual } from "react-redux"
 import { allActions } from "redux/actions/allActions"
 import { getExternalIdentifierTypeList, getPhoneFaxRolesList, getPhoneFaxTypesList, getStateProvincesList } from "redux/actions/dictionaryActions"
-import { AccountType, AppState, Country, ExternalIdentifierType, IndustrySegment, IndustryVertical, ListState, MarketSize, PartyType, PhoneFaxRole, PhoneFaxType, StateProvince, Status } from "types"
+import { AccountType, AppState, Country, ExternalIdentifierType, IndustrySegment, IndustryVertical, MarketSize, PartyType, PhoneFaxRole, PhoneFaxType, StateProvince, Status } from "types"
 
 const useFetchList = <T>(data: string, action: Function) => {
     const dispatch = useDispatch()
@@ -14,11 +14,11 @@ const useFetchList = <T>(data: string, action: Function) => {
 
     const boundAction = useCallback(() => {
         dispatch(action())
-    }, [dispatch])
+    }, [dispatch, action])
 
     useEffect(() => {
         if (!list) boundAction()
-    }, [boundAction])
+    }, [boundAction, list])
 
     return {
         list,

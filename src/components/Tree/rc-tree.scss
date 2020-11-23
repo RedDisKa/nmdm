@@ -10,6 +10,10 @@
     border-color: cyan;
   }
   .rc-tree .rc-tree-treenode {
+    display: flex;
+    align-items: center;
+    text-align: start;
+
     margin: 0;
     padding: 0;
     line-height: 24px;
@@ -27,24 +31,24 @@
     -khtml-user-drag: element;
     -webkit-user-drag: element;
   }
-  .rc-tree .rc-tree-treenode.drop-container > .draggable::after {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    box-shadow: inset 0 0 0 2px red;
-    content: "";
-  }
-  .rc-tree .rc-tree-treenode.drop-container ~ .rc-tree-treenode {
-    border-left: 2px solid chocolate;
-  }
-  .rc-tree .rc-tree-treenode.drop-target {
-    background-color: yellowgreen;
-  }
-  .rc-tree .rc-tree-treenode.drop-target ~ .rc-tree-treenode {
-    border-left: none;
-  }
+  // .rc-tree .rc-tree-treenode.drop-container > .draggable::after {
+  //   position: absolute;
+  //   left: 0;
+  //   right: 0;
+  //   top: 0;
+  //   bottom: 0;
+  //   box-shadow: inset 0 0 0 2px red;
+  //   content: "";
+  // }
+  // .rc-tree .rc-tree-treenode.drop-container ~ .rc-tree-treenode {
+  //   border-left: 2px solid chocolate;
+  // }
+  // .rc-tree .rc-tree-treenode.drop-target {
+  //   background-color: yellowgreen;
+  // }
+  // .rc-tree .rc-tree-treenode.drop-target ~ .rc-tree-treenode {
+  //   border-left: none;
+  // }
   .rc-tree .rc-tree-treenode.filter-node > .rc-tree-node-content-wrapper {
     color: #a60000 !important;
     font-weight: bold !important;
@@ -54,6 +58,7 @@
     padding: 0 0 0 18px;
   }
   .rc-tree .rc-tree-treenode .rc-tree-node-content-wrapper {
+    flex: 1;
     position: relative;
     display: inline-block;
     height: 24px;
@@ -152,9 +157,9 @@
     background: rgba(0, 0, 0, 0.1);
   }
   .rc-tree-node-selected {
-    background-color: #ffe6b0;
-    box-shadow: 0 0 0 1px #ffb951;
-    opacity: 0.8;
+    // background-color: #ffe6b0;
+    // box-shadow: 0 0 0 1px #ffb951;
+    // opacity: 0.8;
   }
   .rc-tree-icon__open {
     margin-right: 2px;
@@ -176,6 +181,7 @@
     vertical-align: top;
   }
   .rc-tree-title {
+    width: 100%;
     display: inline-block;
   }
   .rc-tree-indent {
@@ -188,7 +194,7 @@
     display: inline-block;
   }
   .rc-tree-list-holder-inner {
-      align-items: flex-start;
+      align-items: stretch;
   }
   
 

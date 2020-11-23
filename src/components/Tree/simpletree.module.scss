@@ -18,3 +18,21 @@
   @extend %font_subtitle_medium;
   color: $menu_blue;
 }
+
+.custom_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & > p:last-child {
+    width: 25px;
+    height: 19px;
+    background: $light_gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    @extend %font_regular;
+    color: $menu_blue;
+  }
+}

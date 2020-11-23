@@ -7,7 +7,7 @@ export interface AppRouteType {
 export interface Customer {
   logo: string;
 
-  partyType: string;
+  partyType: number;
   organizationName: string;
   accountType: string;
   marketSizeCode: string;
@@ -24,9 +24,9 @@ export interface Customer {
   addressLine3: string;
   cityName: string;
   countryName: string;
-  stateProvince: string;
+  stateProvince: number | undefined;
   postalCode: string;
-  country: string;
+  country: number | undefined;
   cityAreaDistrictName: string;
   phoneFaxType: string;
   phoneFaxRole: string;
@@ -35,10 +35,10 @@ export interface Customer {
   extension: string;
   prefferedIndicator: boolean;
 
-  industrySegment: string;
-  internalIndustrySegment: string;
-  industryVertical: string;
-  internalIndustryVertical: string;
+  industrySegment: number | undefined;
+  internalIndustrySegment: number | undefined;
+  industryVertical: number | undefined;
+  internalIndustryVertical: number | undefined;
   externalIdentifierType: string;
   status: string;
   identifierValue: string;
@@ -100,19 +100,19 @@ export interface AssignedTask {
 }
 
 export interface Country {
-  countryId: string;
+  countryId: number;
   countryCode: string;
   countryName: string;
   countryTelephoneAccessCode: string;
 }
 
 export interface IndustryVertical {
-  industryVerticalId: string;
+  industryVerticalId: number;
   industryVerticalDescription: string;
 }
 
 export interface IndustrySegment {
-  industrySegmentId: string;
+  industrySegmentId: number;
   industrySegmentName: string;
   industryVertical: IndustryVertical
 }
@@ -153,7 +153,7 @@ export interface ExternalIdentifierType {
 }
 
 export interface StateProvince {
-  stateProvinceId: string,
+  stateProvinceId: number,
   stateProvinceName: string,
   country: Country
 }
