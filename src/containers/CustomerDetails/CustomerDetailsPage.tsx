@@ -6,7 +6,7 @@ import s from "./customerdetailspage.module.scss";
 import classnames from 'classnames';
 import { Button } from "../../components/Button/Button";
 import { Tag } from "../../components/Tag/Tag";
-import { SimpleTree } from "../../components/SimpleTree/SimpleTree";
+import { SimpleTree } from "../../components/Tree/SimpleTree";
 import { Bar } from "react-chartjs-2";
 import { HistoryList } from "../../components/HistoryList/HistoryList";
 import { DropdownButton } from "components/DropdownButton/DropdownButton";
